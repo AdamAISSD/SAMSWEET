@@ -2,6 +2,10 @@
 
 Date: 2026-06-24
 
+## 0. Redesign Reference
+
+The UI refinement pass follows `docs/ui-redesign-reference.xml`. The XML reference translates the product manager, senior UI designer, and frontend engineering requirements into module-level acceptance criteria for header, hero, product categories, product grid, trust modules, order flow, FAQ, final CTA, footer, mobile behavior, accessibility, and technical constraints.
+
 ## 1. Brand Positioning
 
 SAMSWEET is a professional SSD and memory supplier for global buyers.
@@ -49,6 +53,9 @@ Claims must stay credible. Do not use unsupported statements such as "No.1 in th
   - Final CTA
 - Page sections should be full-width bands or clean constrained layouts, not nested card stacks.
 - Cards are reserved for products, Bento metrics, FAQ items, cart rows, and drawer/modal surfaces.
+- Header should behave like a centered liquid-glass navigation bar on desktop and prioritize logo, language, and cart on mobile.
+- Product categories should act as B2B navigation cards, not just counters.
+- The product grid is the primary conversion surface and should expose result count, active filters, procurement-style quantity controls, and visible add-to-inquiry feedback.
 
 ## 5. Product Card Standard
 

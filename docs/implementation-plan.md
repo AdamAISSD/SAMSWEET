@@ -4,7 +4,7 @@ Date: 2026-06-24
 
 ## Objective
 
-Build and deploy a responsive English-first SAMSWEET SSD and memory independent site for overseas B2B buyers. The site will present SSD and memory product lines, support multilingual browsing, persist an inquiry cart in localStorage, and submit encoded order details to WhatsApp `8619064025220`.
+Build and deploy a responsive English-first SAMSWEET SSD and memory independent site for overseas B2B buyers. The site will present SSD and memory product lines, support multilingual browsing, persist an inquiry cart in localStorage, and submit encoded order details to WhatsApp `8613602489689`.
 
 ## Source Strategy
 
@@ -51,7 +51,7 @@ Build and deploy a responsive English-first SAMSWEET SSD and memory independent 
 - English default language and persisted language switching.
 - Arabic `dir=rtl` and correct layout direction.
 - Add single and multiple products to cart, modify quantities, refresh persistence.
-- Submit order and verify WhatsApp phone `8619064025220`, URL encoding, and fallback copy path.
+- Submit order and verify WhatsApp phone `8613602489689`, URL encoding, and fallback copy path.
 - No hotlinked JD/Tmall images.
 - No secrets, cookies, tokens, customer data, or private credentials in the repo.
 - `docs/design-standard.md`, `docs/source-harvest-report.md`, `docs/acceptance-report.md`, and `README.md` completed.

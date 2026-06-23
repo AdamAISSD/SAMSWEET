@@ -9,6 +9,7 @@ const required = [
   "src/data/products.js",
   "src/i18n/translations.js",
   "docs/design-standard.md",
+  "docs/ui-redesign-reference.xml",
   "docs/source-harvest-report.md",
   "docs/acceptance-report.md",
   "README.md",
@@ -44,7 +45,7 @@ const checks = [
   [index.includes("application/ld+json"), "JSON-LD script missing"],
   [app.includes("navigator.clipboard.writeText(orderText)"), "Clipboard call must use orderText inside submit flow"],
   [app.includes("encodeURIComponent(orderText)"), "WhatsApp text must be encoded with encodeURIComponent"],
-  [app.includes("8619064025220"), "WhatsApp phone number missing"],
+  [app.includes("8613602489689"), "WhatsApp phone number missing"],
   [translations.includes("ar:"), "Arabic translations missing"],
   [translations.includes("dir: \"rtl\""), "Arabic RTL metadata missing"],
   [products.includes("placeholder: true") || products.includes("sourcePlatform: \"ExistingRepo\""), "Product source/placeholder metadata missing"]

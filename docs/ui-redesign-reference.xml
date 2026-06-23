@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<samsweet-ui-redesign-reference version="2026-06-24" source="user-brief-derived">
+  <objective>
+    <summary>Upgrade the existing SAMSWEET site from an engineering MVP into a conversion-focused premium B2B technology storefront.</summary>
+    <primaryAction>Build an SSD / memory inquiry list and submit it to WhatsApp.</primaryAction>
+    <whatsapp phone="8613602489689" display="+86 136 0248 9689" />
+  </objective>
+  <audience>
+    <segment>SSD and memory wholesale buyers</segment>
+    <segment>Computer repair shops</segment>
+    <segment>PC builders</segment>
+    <segment>Channel distributors</segment>
+    <segment>Overseas importers</segment>
+    <segment>E-commerce sellers</segment>
+    <segment>Enterprise procurement buyers</segment>
+  </audience>
+  <visual-direction>
+    <style>Apple-like premium technology</style>
+    <style>Dark-first liquid glass</style>
+    <style>Bento grid</style>
+    <style>High-performance storage</style>
+    <style>Export wholesale</style>
+    <tone>Clean, calm, trustworthy, precise</tone>
+    <palette>
+      <background>#05070D</background>
+      <background>#080B12</background>
+      <primary>cyan</primary>
+      <primary>electric blue</primary>
+      <accent>violet glow</accent>
+      <material>silver metal SSD</material>
+    </palette>
+    <avoid>Cheap ecommerce templates</avoid>
+    <avoid>Taobao-style information stacking</avoid>
+    <avoid>Red/yellow promotion styling</avoid>
+    <avoid>Fake certification badges</avoid>
+    <avoid>Excessive animation</avoid>
+  </visual-direction>
+  <modules>
+    <module name="Header">
+      <requirement>Desktop centered glass navigation with light blur and compact sticky behavior.</requirement>
+      <requirement>Mobile keeps logo, language, and cart as the primary entries.</requirement>
+      <requirement>WhatsApp CTA text is "WhatsApp Inquiry".</requirement>
+      <requirement>Cart count is visible and active language is clear.</requirement>
+      <requirement>Arabic RTL layout remains natural.</requirement>
+    </module>
+    <module name="Hero">
+      <requirement>Communicate SSD / Memory wholesale in three seconds.</requirement>
+      <requirement>Use large SSD visual, restrained glow, and Bento stats.</requirement>
+      <requirement>Add trust strip: Wholesale-ready, Local assets, Multi-language inquiry, WhatsApp order flow, Contact for current quotation.</requirement>
+    </module>
+    <module name="Product Categories">
+      <requirement>Use Bento category cards with name, use case, popular capacities, product count, and Explore.</requirement>
+      <requirement>Clicking filters product grid and scrolls to products.</requirement>
+      <requirement>Mobile must not cause page-level horizontal overflow.</requirement>
+    </module>
+    <module name="Product Section">
+      <requirement>Search placeholder references capacity, interface, PCIe, and SATA.</requirement>
+      <requirement>Show result count and active filter chips with clear action.</requirement>
+      <requirement>Product cards use larger product visuals, spec chips, procurement-style quantity control, and Add to Inquiry feedback.</requirement>
+    </module>
+    <module name="Why SAMSWEET">
+      <requirement>Use B2B trust cards: clear product families, wholesale workflow, QC, export communication, multi-language buyer experience, fast quotation by WhatsApp.</requirement>
+    </module>
+    <module name="Technical Specs">
+      <requirement>Present procurement decision matrix: Interface, Capacity range, Use case, Inquiry note.</requirement>
+      <requirement>Do not invent speed, certifications, or unsupported claims.</requirement>
+    </module>
+    <module name="Wholesale Order Flow">
+      <requirement>Four-step timeline: Choose products, Add quantities, Submit WhatsApp inquiry, Confirm quotation and shipment.</requirement>
+    </module>
+    <module name="Quality Warranty">
+      <requirement>Use product/inspection visual with checklist: batch inspection, packaging support, final specifications by quotation, warranty confirmed before order.</requirement>
+    </module>
+    <module name="FAQ">
+      <requirement>Modern accordion, clear open/hover states, touch-friendly, RTL safe.</requirement>
+    </module>
+    <module name="Final CTA">
+      <requirement>Strong conversion area with "Ready to build your SSD order list?", Open Inquiry Cart, and Chat on WhatsApp.</requirement>
+    </module>
+    <module name="Footer">
+      <requirement>Four columns: Brand, Product Categories, Contact, Languages / Disclaimer.</requirement>
+      <requirement>WhatsApp display is +86 136 0248 9689.</requirement>
+    </module>
+  </modules>
+  <mobile>
+    <viewport width="390px">
+      <requirement>No horizontal scrolling.</requirement>
+      <requirement>Header does not crowd.</requirement>
+      <requirement>Hero is compact enough to reveal product context quickly.</requirement>
+      <requirement>Sticky cart button is visible and clickable.</requirement>
+      <requirement>Controls are at least 44px tall where practical.</requirement>
+      <requirement>Cart drawer is 100% width with visible close and accessible submit.</requirement>
+    </viewport>
+  </mobile>
+  <accessibility>
+    <requirement>Strong contrast.</requirement>
+    <requirement>Visible focus states.</requirement>
+    <requirement>Image alt text.</requirement>
+    <requirement>Keyboard-accessible controls.</requirement>
+    <requirement>prefers-reduced-motion respected.</requirement>
+    <requirement>Arabic sets html dir="rtl" and uses logical CSS properties.</requirement>
+    <requirement>Clipboard fallback textarea remains usable.</requirement>
+  </accessibility>
+  <technical-constraints>
+    <constraint>Keep vanilla JavaScript architecture.</constraint>
+    <constraint>No backend, database, login, payment, or heavy dependencies.</constraint>
+    <constraint>Preserve existing data attributes used by delegated event handling.</constraint>
+    <constraint>Keep GitHub Pages static deployment, SEO, sitemap, and robots.</constraint>
+  </technical-constraints>
+</samsweet-ui-redesign-reference>

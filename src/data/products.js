@@ -8,7 +8,7 @@ export const productSources = {
 };
 
 const referencePrice = (rmb) =>
-  `Reference RMB ${rmb} / pc · Contact for current quotation`;
+  `Reference RMB ${rmb} / pc - Contact for current quotation`;
 
 const baseHighlights = [
   "Bulk order and channel supply",

@@ -16,7 +16,7 @@
     "quality": "质量",
     "faq": "FAQ",
     "cart": "询价车",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp Inquiry"
   },
   "hero": {
     "eyebrow": "SSD 批发供应",
@@ -64,7 +64,7 @@
         "适合渠道订单规划的 SSD 与内存产品线。"
       ],
       [
-        "报价路径清晰",
+        "报价/径清晰",
         "参考价用于开启沟通，最终价格和库存由 SAMSWEET 直接确认。"
       ],
       [
@@ -194,6 +194,6 @@
   "footer": {
     "summary": "SAMSWEET SSD 与内存产品，服务批发买家、维修渠道和全球分销商。",
     "disclaimer": "产品规格和价格可能变化，最终细节以报价确认为准。",
-    "whatsapp": "WhatsApp: +86 19064025220"
+    "whatsapp": "WhatsApp: +86 136 0248 9689"
   }
 }

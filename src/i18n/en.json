@@ -16,7 +16,7 @@
     "quality": "Quality",
     "faq": "FAQ",
     "cart": "Inquiry Cart",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp Inquiry"
   },
   "hero": {
     "eyebrow": "Wholesale SSD Supply",
@@ -43,6 +43,7 @@
     "title": "Static product data, clear sourcing notes, fast inquiry.",
     "body": "Prices are reference RMB figures from the June 8, 2026 SAMSWEET list. Final details are confirmed by quotation.",
     "search": "Search product, capacity, interface",
+    "searchPlaceholder": "Search capacity, interface, PCIe, SATA...",
     "category": "Category",
     "capacity": "Capacity",
     "allCapacities": "All capacities",
@@ -60,20 +61,28 @@
     "title": "Built for export wholesale conversations.",
     "items": [
       [
-        "Factory-backed supply",
-        "Practical SSD and memory lines for buyers planning channel orders."
+        "Clear product families",
+        "PCIe, SATA, NGFF, mSATA and DDR lines are easy to compare."
       ],
       [
-        "Clear quotation path",
-        "Reference prices help start the conversation; final price and stock are confirmed directly."
+        "Wholesale inquiry workflow",
+        "Build a clean product list before starting the quotation chat."
       ],
       [
-        "Quality checked before shipment",
-        "Batch inspection, packaging support, and after-sales communication can be aligned before order."
+        "QC before shipment",
+        "Batch inspection can be aligned before dispatch."
       ],
       [
-        "Responsible claims",
-        "Specifications, warranty terms, and performance details are confirmed by SKU and quotation."
+        "Export-ready communication",
+        "Product, quantity and buyer details are sent in one message."
+      ],
+      [
+        "Multi-language buyer experience",
+        "Seven languages help overseas buyers browse with less friction."
+      ],
+      [
+        "Fast quotation by WhatsApp",
+        "Inquiry text is copied and opened in WhatsApp for quick follow-up."
       ]
     ]
   },
@@ -108,20 +117,20 @@
     "title": "From product selection to confirmed shipment.",
     "steps": [
       [
-        "Choose product and quantity",
-        "Add the exact capacities and quantities to your inquiry cart."
+        "Choose products",
+        "Filter by category, capacity and interface."
       ],
       [
-        "Submit inquiry via WhatsApp",
-        "Your order text is copied and WhatsApp opens with the message ready."
+        "Add quantities",
+        "Use the procurement-style stepper on each product card."
       ],
       [
-        "Confirm quotation and stock",
-        "Confirm price, packaging, quality grade, warranty and lead time."
+        "Submit WhatsApp inquiry",
+        "Order text is copied and WhatsApp opens with the message ready."
       ],
       [
-        "Arrange payment and shipment",
-        "Proceed only after final quotation and shipment details are confirmed."
+        "Confirm quotation and shipment",
+        "Confirm price, stock, warranty, packaging and lead time."
       ]
     ]
   },
@@ -187,13 +196,13 @@
     ]
   },
   "finalCta": {
-    "title": "Ready to build your SAMSWEET SSD inquiry?",
-    "body": "Select products, add quantities, and send a clean WhatsApp message with your sourcing requirements.",
-    "button": "Start Inquiry"
+    "title": "Ready to build your SSD order list?",
+    "body": "Choose products and quantities first, then send a clean WhatsApp inquiry for current quotation and stock.",
+    "button": "Open Inquiry Cart"
   },
   "footer": {
     "summary": "SAMSWEET SSD and memory products for wholesale buyers, repair channels and global distributors.",
     "disclaimer": "Product specifications and prices may change. Final details are confirmed by quotation.",
-    "whatsapp": "WhatsApp: +86 19064025220"
+    "whatsapp": "WhatsApp: +86 136 0248 9689"
   }
 }

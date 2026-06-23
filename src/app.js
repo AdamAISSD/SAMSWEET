@@ -1,7 +1,7 @@
 import { capacities, categories, products } from "./data/products.js";
 import { defaultLocale, localeMeta, localeOrder, translations } from "./i18n/translations.js";
 
-const WHATSAPP_PHONE = "8619064025220";
+const WHATSAPP_PHONE = "8613602489689";
 const CART_KEY = "samsweet-inquiry-cart-v1";
 const LOCALE_KEY = "samsweet-locale";
 
@@ -25,6 +25,67 @@ const state = {
 };
 
 let toastTimer;
+
+const categoryProfiles = {
+  "PCIe SSD": {
+    useCase: "Performance upgrades for PC builders and distributors",
+    popular: "128GB / 256GB / 512GB / 1TB"
+  },
+  "SATA SSD": {
+    useCase: "2.5 inch upgrades for repair shops and legacy PCs",
+    popular: "128GB / 256GB / 512GB / 1TB"
+  },
+  "M.2 NGFF SSD": {
+    useCase: "M.2 SATA options for notebooks and mini PCs",
+    popular: "128GB / 256GB / 512GB / 1TB"
+  },
+  "mSATA SSD": {
+    useCase: "Compact SATA storage for older systems",
+    popular: "128GB / 256GB / 512GB"
+  },
+  "DDR Memory": {
+    useCase: "DDR3 / DDR4 memory for repair and channel supply",
+    popular: "DDR3 8GB / DDR4 8GB / DDR4 16GB"
+  }
+};
+
+const specMatrix = [
+  {
+    family: "PCIe SSD",
+    interface: "PCIe / M.2 2280",
+    range: "128GB - 1TB",
+    useCase: "Fast PC upgrades and channel bundles",
+    note: "Confirm controller, NAND, speed and warranty by quotation"
+  },
+  {
+    family: "2.5 SATA SSD",
+    interface: "SATA 3.0 / 6.0Gbps",
+    range: "128GB - 1TB",
+    useCase: "Laptop, desktop and repair replacement",
+    note: "Good for mixed-capacity wholesale lists"
+  },
+  {
+    family: "M.2 NGFF",
+    interface: "M.2 NGFF / SATA",
+    range: "128GB - 1TB",
+    useCase: "Compatible notebooks and mini PCs",
+    note: "Confirm device interface before order"
+  },
+  {
+    family: "mSATA",
+    interface: "mSATA / SATA",
+    range: "128GB - 512GB",
+    useCase: "Older systems and embedded upgrades",
+    note: "Stock and warranty confirmed by inquiry"
+  },
+  {
+    family: "DDR Memory",
+    interface: "DDR3 / DDR4",
+    range: "8GB - 16GB",
+    useCase: "Repair, upgrade and reseller supply",
+    note: "Frequency and compatibility confirmed by SKU"
+  }
+];
 
 function loadLocale() {
   try {
@@ -93,6 +154,7 @@ function cartItems() {
 function renderApp() {
   setDocumentLocale();
   const t = text();
+  const searchPlaceholder = t.products.searchPlaceholder || "Search capacity, interface, PCIe, SATA...";
 
   app.innerHTML = `
     <header class="site-header">
@@ -148,6 +210,11 @@ function renderApp() {
             ${t.hero.stats.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
           </div>
         </div>
+        <div class="trust-strip" aria-label="SAMSWEET buyer trust notes">
+          ${["Wholesale-ready", "Local assets", "Multi-language inquiry", "WhatsApp order flow", "Contact for current quotation"]
+            .map((item) => `<span>${escapeHtml(item)}</span>`)
+            .join("")}
+        </div>
       </section>
 
       <section class="section" id="categories">
@@ -160,11 +227,11 @@ function renderApp() {
       <section class="section product-section" id="products">
         ${sectionHeader(t.products.eyebrow, t.products.title, t.products.body)}
         <div class="product-toolbar" aria-label="Product filters">
-          <label>
+          <label class="search-field">
             <span>${escapeHtml(t.products.search)}</span>
-            <input class="filter-input" data-filter="search" type="search" value="${escapeHtml(state.filters.search)}" placeholder="${escapeHtml(t.products.search)}">
+            <input class="filter-input" data-filter="search" type="search" value="${escapeHtml(state.filters.search)}" placeholder="${escapeHtml(searchPlaceholder)}">
           </label>
-          <label>
+          <label class="select-field">
             <span>${escapeHtml(t.products.category)}</span>
             <select class="filter-input" data-filter="category">
               <option value="all">${escapeHtml(t.categoryLabels.all)}</option>
@@ -173,7 +240,7 @@ function renderApp() {
                 .join("")}
             </select>
           </label>
-          <label>
+          <label class="select-field">
             <span>${escapeHtml(t.products.capacity)}</span>
             <select class="filter-input" data-filter="capacity">
               <option value="all">${escapeHtml(t.products.allCapacities)}</option>
@@ -182,6 +249,10 @@ function renderApp() {
                 .join("")}
             </select>
           </label>
+        </div>
+        <div class="filter-status" aria-live="polite">
+          <p id="result-count"></p>
+          <div class="filter-chips" id="filter-chips"></div>
         </div>
         <div class="product-grid" id="product-grid"></div>
       </section>
@@ -198,13 +269,23 @@ function renderApp() {
 
       <section class="section specs-band" id="specs">
         ${sectionHeader(t.specs.eyebrow, t.specs.title, "")}
-        <div class="spec-table" role="list">
-          ${t.specs.items
+        <div class="spec-matrix" role="table" aria-label="SAMSWEET procurement specification matrix">
+          <div class="spec-matrix-head" role="row">
+            <span role="columnheader">Family</span>
+            <span role="columnheader">Interface</span>
+            <span role="columnheader">Capacity range</span>
+            <span role="columnheader">Use case</span>
+            <span role="columnheader">Inquiry note</span>
+          </div>
+          ${specMatrix
             .map(
-              ([title, body]) => `
-                <div class="spec-row" role="listitem">
-                  <strong>${escapeHtml(title)}</strong>
-                  <span>${escapeHtml(body)}</span>
+              (row) => `
+                <div class="spec-matrix-row" role="row">
+                  <strong role="cell">${escapeHtml(row.family)}</strong>
+                  <span role="cell">${escapeHtml(row.interface)}</span>
+                  <span role="cell">${escapeHtml(row.range)}</span>
+                  <span role="cell">${escapeHtml(row.useCase)}</span>
+                  <span role="cell">${escapeHtml(row.note)}</span>
                 </div>
               `
             )
@@ -265,21 +346,30 @@ function renderApp() {
         <p class="eyebrow">${escapeHtml(t.hero.eyebrow)}</p>
         <h2>${escapeHtml(t.finalCta.title)}</h2>
         <p>${escapeHtml(t.finalCta.body)}</p>
-        <button class="button button-primary js-cart-open" type="button">${escapeHtml(t.finalCta.button)}</button>
+        <div class="final-cta-actions">
+          <button class="button button-primary js-cart-open" type="button">${escapeHtml(t.finalCta.button)}</button>
+          <a class="button button-ghost" href="https://wa.me/${WHATSAPP_PHONE}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
+      <div class="footer-column footer-brand">
         <strong>SAMSWEET</strong>
         <p>${escapeHtml(t.footer.summary)}</p>
       </div>
-      <div>
-        <p>${escapeHtml(t.footer.whatsapp)}</p>
-        <p>${escapeHtml(categories.map((category) => t.categoryLabels[category] || category).join(" · "))}</p>
+      <div class="footer-column">
+        <strong>Product Categories</strong>
+        <p>${escapeHtml(categories.map((category) => t.categoryLabels[category] || category).join(" / "))}</p>
       </div>
-      <div>
-        <p>${escapeHtml(localeOrder.map((locale) => localeMeta[locale].name).join(" · "))}</p>
+      <div class="footer-column">
+        <strong>Contact</strong>
+        <p>${escapeHtml(t.footer.whatsapp)}</p>
+        <a class="footer-link" href="https://wa.me/${WHATSAPP_PHONE}" target="_blank" rel="noopener">WhatsApp Inquiry</a>
+      </div>
+      <div class="footer-column">
+        <strong>Languages / Disclaimer</strong>
+        <p>${escapeHtml(localeOrder.map((locale) => localeMeta[locale].name).join(" / "))}</p>
         <p>${escapeHtml(t.footer.disclaimer)}</p>
       </div>
     </footer>
@@ -319,10 +409,17 @@ function infoCard(title, body) {
 function categoryCard(category) {
   const t = text();
   const count = products.filter((product) => product.category === category && product.qualityGrade === "Brand New").length;
+  const profile = categoryProfiles[category] || { useCase: "Wholesale storage supply", popular: "Contact for options" };
+  const isActive = state.filters.category === category;
   return `
-    <button class="category-card" type="button" data-category-card="${escapeHtml(category)}">
-      <span>${escapeHtml(t.categoryLabels[category] || category)}</span>
-      <strong>${count}</strong>
+    <button class="category-card ${isActive ? "is-selected" : ""}" type="button" data-category-card="${escapeHtml(category)}">
+      <span class="category-name">${escapeHtml(t.categoryLabels[category] || category)}</span>
+      <span class="category-use">${escapeHtml(profile.useCase)}</span>
+      <span class="category-popular">${escapeHtml(profile.popular)}</span>
+      <span class="category-foot">
+        <strong>${count}</strong>
+        <em>Explore</em>
+      </span>
     </button>
   `;
 }
@@ -342,8 +439,10 @@ function productMatches(product) {
     .join(" ")
     .toLowerCase();
 
+  const searchMatches = !search || search.split(/\s+/).every((token) => haystack.includes(token));
+
   return (
-    (!search || haystack.includes(search)) &&
+    searchMatches &&
     (state.filters.category === "all" || product.category === state.filters.category) &&
     (state.filters.capacity === "all" || product.capacity === state.filters.capacity)
   );
@@ -354,6 +453,7 @@ function renderProducts() {
   const grid = document.querySelector("#product-grid");
   if (!grid) return;
   const filtered = products.filter(productMatches);
+  renderFilterStatus(filtered.length);
 
   if (!filtered.length) {
     grid.innerHTML = `<p class="empty-state">${escapeHtml(t.products.noResults)}</p>`;
@@ -361,6 +461,31 @@ function renderProducts() {
   }
 
   grid.innerHTML = filtered.map((product) => productCard(product)).join("");
+}
+
+function renderFilterStatus(count) {
+  const t = text();
+  const result = document.querySelector("#result-count");
+  const chips = document.querySelector("#filter-chips");
+  if (result) result.textContent = `Showing ${count} products`;
+  if (!chips) return;
+
+  const active = [];
+  if (state.filters.search.trim()) active.push(["search", state.filters.search.trim()]);
+  if (state.filters.category !== "all") active.push(["category", t.categoryLabels[state.filters.category] || state.filters.category]);
+  if (state.filters.capacity !== "all") active.push(["capacity", state.filters.capacity]);
+
+  if (!active.length) {
+    chips.innerHTML = "";
+    return;
+  }
+
+  chips.innerHTML = `
+    ${active
+      .map(([key, value]) => `<button class="filter-chip" type="button" data-clear-filter="${escapeHtml(key)}">${escapeHtml(value)} <span aria-hidden="true">x</span></button>`)
+      .join("")}
+    <button class="filter-chip filter-chip-clear" type="button" data-reset-filters>Clear filters</button>
+  `;
 }
 
 function productImage(product, eager = false) {
@@ -386,7 +511,7 @@ function productCard(product) {
       </div>
       <div class="product-body">
         <div class="product-title-row">
-          <p class="product-category">${escapeHtml(t.categoryLabels[product.category] || product.category)} · ${escapeHtml(product.qualityGrade)}</p>
+          <p class="product-category">${escapeHtml(t.categoryLabels[product.category] || product.category)} / ${escapeHtml(product.qualityGrade)}</p>
           <h3>${escapeHtml(product.name)}</h3>
         </div>
         <dl class="product-specs">
@@ -394,6 +519,7 @@ function productCard(product) {
           <div><dt>Interface</dt><dd>${escapeHtml(product.interface || "-")}</dd></div>
           <div><dt>Protocol</dt><dd>${escapeHtml(product.protocol || "-")}</dd></div>
           <div><dt>Speed</dt><dd>${escapeHtml(product.speedRead || "Confirm")}</dd></div>
+          <div><dt>Grade</dt><dd>${escapeHtml(product.qualityGrade || "-")}</dd></div>
         </dl>
         <p class="price-text">${escapeHtml(product.priceText || "Contact for quote")}</p>
         <ul class="mini-list">
@@ -405,7 +531,7 @@ function productCard(product) {
             <input type="number" min="1" max="9999" value="${currentQty}" data-product-qty="${escapeHtml(product.id)}" aria-label="${escapeHtml(t.products.qty)} ${escapeHtml(product.name)}">
             <button type="button" data-step-product="${escapeHtml(product.id)}" data-delta="1" aria-label="Increase quantity">+</button>
           </div>
-          <button class="button button-primary" type="button" data-add-product="${escapeHtml(product.id)}">${escapeHtml(t.products.add)}</button>
+          <button class="button button-primary add-button" type="button" data-add-product="${escapeHtml(product.id)}">${escapeHtml(t.products.add)}</button>
         </div>
       </div>
     </article>
@@ -422,7 +548,7 @@ function renderCartDrawer() {
           <p class="eyebrow">${escapeHtml(t.nav.cart)}</p>
           <h2>${escapeHtml(t.cart.title)}</h2>
         </div>
-        <button class="icon-button" type="button" data-cart-close aria-label="${escapeHtml(t.cart.close)}">×</button>
+        <button class="icon-button" type="button" data-cart-close aria-label="${escapeHtml(t.cart.close)}">x</button>
       </div>
       <div class="cart-items" id="cart-items"></div>
       <form class="order-form" id="order-form">
@@ -442,7 +568,7 @@ function renderFallbackModal() {
   return `
     <div class="fallback-modal" id="fallback-modal" hidden>
       <div class="fallback-card" role="dialog" aria-modal="true" aria-labelledby="fallback-title">
-        <button class="icon-button fallback-close" type="button" data-fallback-close aria-label="Close">×</button>
+        <button class="icon-button fallback-close" type="button" data-fallback-close aria-label="Close">x</button>
         <h2 id="fallback-title"></h2>
         <p id="fallback-body"></p>
         <textarea id="fallback-text" rows="12" readonly></textarea>
@@ -476,7 +602,7 @@ function renderCart() {
             <div>
               <strong>${escapeHtml(product.name)}</strong>
               <p>${escapeHtml([product.capacity, product.interface, product.protocol].filter(Boolean).join(" / "))}</p>
-              <p>${escapeHtml(product.sourcePlatform)} · ${escapeHtml(product.qualityGrade)}</p>
+              <p>${escapeHtml(product.sourcePlatform)} / ${escapeHtml(product.qualityGrade)}</p>
             </div>
             <div class="cart-row-actions">
               <div class="quantity-control compact">
@@ -499,11 +625,29 @@ function updateQuantityInput(input, delta) {
   input.value = String(next);
 }
 
-function addToCart(productId, qty) {
+function syncFilterControls() {
+  const search = document.querySelector('[data-filter="search"]');
+  const category = document.querySelector('[data-filter="category"]');
+  const capacity = document.querySelector('[data-filter="capacity"]');
+  if (search) search.value = state.filters.search;
+  if (category) category.value = state.filters.category;
+  if (capacity) capacity.value = state.filters.capacity;
+}
+
+function addToCart(productId, qty, button) {
   const nextQty = Math.max(1, Math.min(9999, Number(qty || 1)));
   state.cart[productId] = (state.cart[productId] || 0) + nextQty;
   saveCart();
   renderCart();
+  if (button) {
+    const original = button.textContent;
+    button.textContent = "Added";
+    button.classList.add("is-added");
+    setTimeout(() => {
+      button.textContent = original;
+      button.classList.remove("is-added");
+    }, 1200);
+  }
   showToast(text().products.added);
 }
 
@@ -661,6 +805,21 @@ function bindGlobalEvents() {
       return;
     }
 
+    const clearFilter = target.dataset.clearFilter;
+    if (clearFilter) {
+      state.filters[clearFilter] = clearFilter === "search" ? "" : "all";
+      syncFilterControls();
+      renderProducts();
+      return;
+    }
+
+    if (target.hasAttribute("data-reset-filters")) {
+      state.filters = { search: "", category: "all", capacity: "all" };
+      syncFilterControls();
+      renderProducts();
+      return;
+    }
+
     if (target.matches(".js-cart-open")) {
       openCart();
       return;
@@ -686,7 +845,7 @@ function bindGlobalEvents() {
     const addProduct = target.dataset.addProduct;
     if (addProduct) {
       const input = document.querySelector(`[data-product-qty="${CSS.escape(addProduct)}"]`);
-      addToCart(addProduct, input?.value || 1);
+      addToCart(addProduct, input?.value || 1, target);
       return;
     }
 
@@ -742,6 +901,12 @@ function bindGlobalEvents() {
       closeFallback();
     }
   });
+
+  const updateScrollState = () => {
+    document.body.classList.toggle("is-scrolled", window.scrollY > 24);
+  };
+  updateScrollState();
+  window.addEventListener("scroll", updateScrollState, { passive: true });
 }
 
 bindGlobalEvents();

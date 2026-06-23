@@ -2,7 +2,18 @@
 
 Responsive multilingual independent site for SAMSWEET SSD and memory wholesale inquiries.
 
-The site is built as a static GitHub Pages project. It presents PCIe SSD, 2.5 SATA SSD, M.2 NGFF SATA SSD, mSATA SSD, and DDR memory products; supports English, Arabic, French, Spanish, Portuguese, Russian, and Simplified Chinese; stores an inquiry cart in `localStorage`; and submits an encoded inquiry message to WhatsApp `+86 19064025220`.
+The site is built as a static GitHub Pages project. It presents PCIe SSD, 2.5 SATA SSD, M.2 NGFF SATA SSD, mSATA SSD, and DDR memory products; supports English, Arabic, French, Spanish, Portuguese, Russian, and Simplified Chinese; stores an inquiry cart in `localStorage`; and submits an encoded inquiry message to WhatsApp `+86 136 0248 9689`.
+
+## UI Refinement
+
+The current interface has been refined as a conversion-focused premium B2B technology storefront:
+
+- Apple-like dark-first liquid glass visual system.
+- Larger SSD hero visual with trust strip and Bento stats.
+- Category Bento cards with use case, popular capacities, product count, and Explore action.
+- Product section with stronger search, result count, active filter chips, spec chips, procurement quantity controls, and Added feedback.
+- Four-step wholesale timeline, procurement specs matrix, modern FAQ accordion, stronger final CTA, and four-column footer.
+- 390px mobile layout keeps language and cart accessible without page-level horizontal overflow.
 
 ## Live Deployment
 
@@ -37,6 +48,7 @@ public/
 docs/
   implementation-plan.md
   design-standard.md
+  ui-redesign-reference.xml
   source-harvest-report.md
   acceptance-report.md
 .github/workflows/deploy.yml
@@ -64,7 +76,7 @@ Arabic uses `dir="rtl"`. Technical terms such as PCIe, NVMe, SATA, NGFF, mSATA, 
 2. Cart persists in `localStorage`.
 3. Buyer fills name, country, WhatsApp, and remark.
 4. Submit generates the order text, calls `navigator.clipboard.writeText(orderText)` inside the click/submit flow, and opens:
-   `https://wa.me/8619064025220?text=<URL_ENCODED_ORDER_TEXT>`
+   `https://wa.me/8613602489689?text=<URL_ENCODED_ORDER_TEXT>`
 5. If clipboard access is blocked, a fallback textarea displays the full order text.
 
 ## Assets and Sources

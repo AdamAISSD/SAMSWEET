@@ -4,6 +4,8 @@ Harvest run: 2026-06-24 Asia/Taipei
 
 Scope: validate public sources and extract usable product/category/price facts for the SAMSWEET site. No credentials were used. No CAPTCHA, login, risk-control, or anti-bot flow was bypassed. JD/Tmall assets were not hotlinked.
 
+Contact route for storefront inquiries: WhatsApp `+86 136 0248 9689`, `https://wa.me/8613602489689`. This contact number is site configuration, not harvested JD/Tmall data.
+
 ## Source Results
 
 | Source | Access result | Usable for site | Notes |
