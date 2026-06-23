@@ -1,0 +1,199 @@
+{
+  "locale": "es",
+  "languageName": "Español",
+  "direction": "ltr",
+  "categoryLabels": {
+    "all": "Todos",
+    "PCIe SSD": "PCIe SSD",
+    "SATA SSD": "2.5 SATA SSD",
+    "M.2 NGFF SSD": "M.2 NGFF SSD",
+    "mSATA SSD": "mSATA SSD",
+    "DDR Memory": "DDR Memory"
+  },
+  "nav": {
+    "categories": "Categorías",
+    "products": "Productos",
+    "quality": "Calidad",
+    "faq": "FAQ",
+    "cart": "Carrito de consulta",
+    "whatsapp": "WhatsApp"
+  },
+  "hero": {
+    "eyebrow": "Suministro SSD al por mayor",
+    "title": "SAMSWEET SSD para actualizaciones rápidas y fiables.",
+    "subtitle": "SSD y memorias listos para mayoristas, integradores PC, talleres de reparación, distribuidores y compradores globales.",
+    "primary": "Ver productos",
+    "secondary": "Enviar por WhatsApp",
+    "stats": [
+      "PCIe / NVMe",
+      "SATA 3.0",
+      "M.2 / mSATA",
+      "DDR Memory",
+      "Pedidos bulk",
+      "Soporte QC"
+    ]
+  },
+  "categories": {
+    "eyebrow": "Categorías",
+    "title": "Elige la línea de almacenamiento para tus clientes.",
+    "body": "Compara PCIe, SATA, NGFF, mSATA y DDR, y crea un carrito de consulta para confirmar precio y stock."
+  },
+  "products": {
+    "eyebrow": "Productos destacados",
+    "title": "Datos claros, origen visible, consulta rápida.",
+    "body": "Los precios son referencias RMB de la lista SAMSWEET del 8 de junio de 2026. Los detalles finales se confirman por cotización.",
+    "search": "Buscar producto, capacidad, interfaz",
+    "category": "Categoría",
+    "capacity": "Capacidad",
+    "allCapacities": "Todas las capacidades",
+    "noResults": "No hay productos con estos filtros.",
+    "add": "Añadir a consulta",
+    "added": "Añadido al carrito de consulta.",
+    "qty": "Cant.",
+    "details": "Detalles",
+    "source": "Fuente",
+    "placeholder": "Imagen temporal",
+    "referenceAsset": "Imagen de referencia"
+  },
+  "why": {
+    "eyebrow": "Por qué SAMSWEET",
+    "title": "Preparado para conversaciones de exportación y canal.",
+    "items": [
+      [
+        "Suministro con respaldo de fábrica",
+        "Líneas SSD y memoria prácticas para planificar pedidos de canal."
+      ],
+      [
+        "Ruta clara de cotización",
+        "Los precios de referencia inician la conversación; el precio final y stock se confirman directamente."
+      ],
+      [
+        "Revisión antes del envío",
+        "Inspección por lote, packaging y soporte postventa pueden acordarse antes del pedido."
+      ],
+      [
+        "Mensajes responsables",
+        "Especificaciones, garantía y rendimiento se confirman por SKU y cotización."
+      ]
+    ]
+  },
+  "specs": {
+    "eyebrow": "Especificaciones",
+    "title": "Interfaces clave que los compradores revisan primero.",
+    "items": [
+      [
+        "PCIe SSD",
+        "Familia M.2 NVMe-class. Controlador, NAND, velocidad y garantía se confirman por ficha técnica."
+      ],
+      [
+        "2.5 SATA SSD",
+        "Interfaz SATA 3.0 / 6.0Gbps para upgrades comunes."
+      ],
+      [
+        "M.2 NGFF SSD",
+        "Opción M.2 SATA para notebooks, mini PCs y reparación compatibles."
+      ],
+      [
+        "mSATA SSD",
+        "Almacenamiento SATA compacto para sistemas antiguos y embebidos."
+      ],
+      [
+        "DDR Memory",
+        "SKUs DDR3 / DDR4 para reparación, upgrade y canal."
+      ]
+    ]
+  },
+  "flow": {
+    "eyebrow": "Proceso mayorista",
+    "title": "De la selección al envío confirmado.",
+    "steps": [
+      [
+        "Elegir producto y cantidad",
+        "Añade capacidades y cantidades exactas al carrito."
+      ],
+      [
+        "Enviar por WhatsApp",
+        "El texto se copia y WhatsApp se abre con el mensaje listo."
+      ],
+      [
+        "Confirmar precio y stock",
+        "Confirma precio, packaging, grado de calidad, garantía y plazo."
+      ],
+      [
+        "Organizar pago y envío",
+        "Avanza solo tras confirmar cotización y detalles de envío."
+      ]
+    ]
+  },
+  "quality": {
+    "eyebrow": "Garantía / Control de calidad",
+    "title": "Soporte creíble sin promesas exageradas.",
+    "points": [
+      "Inspección por lote antes del envío",
+      "Conversación de suministro estable",
+      "Soporte de packaging para canal",
+      "Garantía confirmada por cotización",
+      "Seguimiento SN / pedido si está disponible"
+    ]
+  },
+  "cart": {
+    "title": "Carrito de consulta",
+    "empty": "Tu carrito está vacío.",
+    "subtotalNote": "Los precios de referencia son orientativos. SAMSWEET confirma la cotización final.",
+    "open": "Abrir carrito",
+    "close": "Cerrar",
+    "remove": "Quitar",
+    "clear": "Vaciar",
+    "formTitle": "Datos del cliente",
+    "name": "Nombre",
+    "country": "País",
+    "whatsapp": "Tu WhatsApp",
+    "remark": "Nota",
+    "submit": "Copiar y abrir WhatsApp",
+    "copied": "Pedido copiado. WhatsApp se abrirá con tu mensaje.",
+    "fallbackTitle": "Copia tu consulta",
+    "fallbackBody": "El navegador bloqueó el portapapeles. Tu consulta está aquí; cópiala y envíala por WhatsApp.",
+    "fallbackButton": "Abrir WhatsApp",
+    "required": "Añade al menos un producto antes de enviar."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Preguntas mayoristas comunes.",
+    "items": [
+      [
+        "¿Cómo obtengo la cotización más reciente?",
+        "Añade productos al carrito y envía el WhatsApp. SAMSWEET confirmará precio, stock y envío."
+      ],
+      [
+        "¿Aceptan pedidos al por mayor?",
+        "Sí, para integradores PC, reparación, distribuidores y compradores globales."
+      ],
+      [
+        "¿Puedo mezclar capacidades?",
+        "Sí. Añade cada capacidad y cantidad para una cotización clara."
+      ],
+      [
+        "¿Cómo confirmo compatibilidad?",
+        "Comparte modelo, interfaz y uso. La compatibilidad final se confirma por especificación o muestra."
+      ],
+      [
+        "¿Cómo hago un pedido?",
+        "Envía la consulta, confirma cotización y stock, y luego organiza pago y envío."
+      ],
+      [
+        "¿Qué pasa si WhatsApp no abre?",
+        "El texto también se copia. Usa el cuadro de respaldo y envíalo manualmente."
+      ]
+    ]
+  },
+  "finalCta": {
+    "title": "¿Listo para crear tu consulta SAMSWEET SSD?",
+    "body": "Selecciona productos, agrega cantidades y envía un mensaje claro por WhatsApp.",
+    "button": "Iniciar consulta"
+  },
+  "footer": {
+    "summary": "SSD y memorias SAMSWEET para compradores mayoristas, reparación y distribuidores globales.",
+    "disclaimer": "Las especificaciones y precios pueden cambiar. Los detalles finales se confirman por cotización.",
+    "whatsapp": "WhatsApp: +86 13602489689"
+  }
+}

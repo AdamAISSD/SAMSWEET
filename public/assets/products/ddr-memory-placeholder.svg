@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">SAMSWEET DDR memory placeholder visual</title>
+  <desc id="desc">DDR memory module placeholder with SAMSWEET branding and cyan accent light.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05070d"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef4fb"/>
+      <stop offset="0.52" stop-color="#9baabd"/>
+      <stop offset="1" stop-color="#4c5b70"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="180" y="462" width="840" height="54" rx="20" fill="#00c8ff" opacity="0.16"/>
+  <g transform="translate(160 275) rotate(-3 440 125)">
+    <rect x="0" y="0" width="880" height="250" rx="30" fill="#081321" stroke="#22d7ff" stroke-opacity="0.34" stroke-width="3"/>
+    <rect x="52" y="48" width="280" height="106" rx="20" fill="url(#plate)"/>
+    <g fill="#101827" stroke="#dce8f5" stroke-opacity="0.22">
+      <rect x="370" y="46" width="74" height="92" rx="12"/>
+      <rect x="466" y="46" width="74" height="92" rx="12"/>
+      <rect x="562" y="46" width="74" height="92" rx="12"/>
+      <rect x="658" y="46" width="74" height="92" rx="12"/>
+      <rect x="754" y="46" width="74" height="92" rx="12"/>
+    </g>
+    <path d="M66 204 H814" stroke="#d8b45a" stroke-width="14" stroke-linecap="round" stroke-dasharray="28 18"/>
+    <text x="88" y="110" fill="#06111f" font-family="Arial, sans-serif" font-size="34" font-weight="700">SAMSWEET</text>
+    <text x="90" y="142" fill="#173047" font-family="Arial, sans-serif" font-size="18" font-weight="700">DDR MEMORY</text>
+  </g>
+</svg>

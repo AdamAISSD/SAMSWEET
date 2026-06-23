@@ -1,0 +1,20 @@
+{
+  "name": "samsweet",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SAMSWEET responsive multilingual SSD and memory inquiry site for overseas B2B buyers.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "lint": "node scripts/lint.mjs"
+  },
+  "keywords": [
+    "SAMSWEET",
+    "SSD",
+    "memory",
+    "wholesale",
+    "GitHub Pages"
+  ],
+  "license": "UNLICENSED"
+}

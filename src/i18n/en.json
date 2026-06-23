@@ -1,0 +1,199 @@
+{
+  "locale": "en",
+  "languageName": "English",
+  "direction": "ltr",
+  "categoryLabels": {
+    "all": "All",
+    "PCIe SSD": "PCIe SSD",
+    "SATA SSD": "2.5 SATA SSD",
+    "M.2 NGFF SSD": "M.2 NGFF SSD",
+    "mSATA SSD": "mSATA SSD",
+    "DDR Memory": "DDR Memory"
+  },
+  "nav": {
+    "categories": "Categories",
+    "products": "Products",
+    "quality": "Quality",
+    "faq": "FAQ",
+    "cart": "Inquiry Cart",
+    "whatsapp": "WhatsApp"
+  },
+  "hero": {
+    "eyebrow": "Wholesale SSD Supply",
+    "title": "SAMSWEET SSD for Fast, Reliable Storage Upgrades.",
+    "subtitle": "Wholesale-ready SSD and memory products for PC builders, repair shops, distributors, and global buyers.",
+    "primary": "View Products",
+    "secondary": "Send Inquiry on WhatsApp",
+    "stats": [
+      "PCIe / NVMe",
+      "SATA 3.0",
+      "M.2 / mSATA",
+      "DDR Memory",
+      "Bulk Supply",
+      "QC Support"
+    ]
+  },
+  "categories": {
+    "eyebrow": "Product Categories",
+    "title": "Choose the storage line that fits your customer base.",
+    "body": "Compare PCIe, SATA, NGFF, mSATA and DDR memory options, then build an inquiry cart for current quotation and stock confirmation."
+  },
+  "products": {
+    "eyebrow": "Featured Products",
+    "title": "Static product data, clear sourcing notes, fast inquiry.",
+    "body": "Prices are reference RMB figures from the June 8, 2026 SAMSWEET list. Final details are confirmed by quotation.",
+    "search": "Search product, capacity, interface",
+    "category": "Category",
+    "capacity": "Capacity",
+    "allCapacities": "All capacities",
+    "noResults": "No products match the current filters.",
+    "add": "Add to Inquiry",
+    "added": "Added to inquiry cart.",
+    "qty": "Qty",
+    "details": "Details",
+    "source": "Source",
+    "placeholder": "Placeholder visual",
+    "referenceAsset": "Reference asset"
+  },
+  "why": {
+    "eyebrow": "Why SAMSWEET",
+    "title": "Built for export wholesale conversations.",
+    "items": [
+      [
+        "Factory-backed supply",
+        "Practical SSD and memory lines for buyers planning channel orders."
+      ],
+      [
+        "Clear quotation path",
+        "Reference prices help start the conversation; final price and stock are confirmed directly."
+      ],
+      [
+        "Quality checked before shipment",
+        "Batch inspection, packaging support, and after-sales communication can be aligned before order."
+      ],
+      [
+        "Responsible claims",
+        "Specifications, warranty terms, and performance details are confirmed by SKU and quotation."
+      ]
+    ]
+  },
+  "specs": {
+    "eyebrow": "Technical Specs",
+    "title": "Key interfaces buyers ask about first.",
+    "items": [
+      [
+        "PCIe SSD",
+        "M.2 NVMe-class SSD family. Confirm controller, NAND, speed and warranty by datasheet."
+      ],
+      [
+        "2.5 SATA SSD",
+        "SATA 3.0 / 6.0Gbps interface for common desktop and laptop upgrades."
+      ],
+      [
+        "M.2 NGFF SSD",
+        "M.2 SATA option for compatible notebooks, mini PCs and repair channels."
+      ],
+      [
+        "mSATA SSD",
+        "Compact SATA storage for older systems and embedded upgrade needs."
+      ],
+      [
+        "DDR Memory",
+        "DDR3 / DDR4 memory SKUs for repair, upgrade and channel supply."
+      ]
+    ]
+  },
+  "flow": {
+    "eyebrow": "Wholesale Order Flow",
+    "title": "From product selection to confirmed shipment.",
+    "steps": [
+      [
+        "Choose product and quantity",
+        "Add the exact capacities and quantities to your inquiry cart."
+      ],
+      [
+        "Submit inquiry via WhatsApp",
+        "Your order text is copied and WhatsApp opens with the message ready."
+      ],
+      [
+        "Confirm quotation and stock",
+        "Confirm price, packaging, quality grade, warranty and lead time."
+      ],
+      [
+        "Arrange payment and shipment",
+        "Proceed only after final quotation and shipment details are confirmed."
+      ]
+    ]
+  },
+  "quality": {
+    "eyebrow": "Warranty / Quality Control",
+    "title": "Credible support without inflated promises.",
+    "points": [
+      "Batch inspection before shipment",
+      "Stable supply discussion for repeat orders",
+      "Packaging support for channel buyers",
+      "Warranty support confirmed by quotation",
+      "SN / order tracking if available"
+    ]
+  },
+  "cart": {
+    "title": "Inquiry Cart",
+    "empty": "Your inquiry cart is empty.",
+    "subtotalNote": "Reference prices are for orientation only. Final quotation is confirmed by SAMSWEET.",
+    "open": "Open inquiry cart",
+    "close": "Close cart",
+    "remove": "Remove",
+    "clear": "Clear cart",
+    "formTitle": "Customer Info",
+    "name": "Name",
+    "country": "Country",
+    "whatsapp": "Your WhatsApp",
+    "remark": "Remark",
+    "submit": "Copy Order & Open WhatsApp",
+    "copied": "Order copied. WhatsApp will open with your inquiry message.",
+    "fallbackTitle": "Copy your inquiry",
+    "fallbackBody": "Clipboard access was blocked. Your order is safe here. Copy it manually, then send it on WhatsApp.",
+    "fallbackButton": "Open WhatsApp",
+    "required": "Please add at least one product before submitting."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Common wholesale questions.",
+    "items": [
+      [
+        "How can I get the latest quotation?",
+        "Add products to the inquiry cart and send the WhatsApp message. SAMSWEET will confirm current price, stock and shipment details."
+      ],
+      [
+        "Do you support wholesale orders?",
+        "Yes. The site is designed for bulk inquiries from PC builders, repair shops, distributors and global buyers."
+      ],
+      [
+        "Can I mix different capacities?",
+        "Yes. Add each capacity and quantity to the cart so the quotation request is clear."
+      ],
+      [
+        "How do I confirm compatibility?",
+        "Share the device model, interface requirement and target use case. Final compatibility should be confirmed by specification or sample evaluation."
+      ],
+      [
+        "How do I place an order?",
+        "Send the inquiry by WhatsApp, confirm quotation and stock, then arrange payment and shipment after final confirmation."
+      ],
+      [
+        "What if WhatsApp does not open?",
+        "The site also copies your order text. If WhatsApp is blocked, use the fallback text box and send the message manually."
+      ]
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to build your SAMSWEET SSD inquiry?",
+    "body": "Select products, add quantities, and send a clean WhatsApp message with your sourcing requirements.",
+    "button": "Start Inquiry"
+  },
+  "footer": {
+    "summary": "SAMSWEET SSD and memory products for wholesale buyers, repair channels and global distributors.",
+    "disclaimer": "Product specifications and prices may change. Final details are confirmed by quotation.",
+    "whatsapp": "WhatsApp: +86 13602489689"
+  }
+}
