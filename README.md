@@ -2,7 +2,7 @@
 
 Responsive multilingual independent site for SAMSWEET SSD and memory wholesale inquiries.
 
-The site is built as a static GitHub Pages project. It presents PCIe SSD, 2.5 SATA SSD, M.2 NGFF SATA SSD, mSATA SSD, and DDR memory products; supports English, Arabic, French, Spanish, Portuguese, Russian, and Simplified Chinese; stores an inquiry cart in `localStorage`; and submits an encoded inquiry message to WhatsApp `+86 13602489689`.
+The site is built as a static GitHub Pages project. It presents PCIe SSD, 2.5 SATA SSD, M.2 NGFF SATA SSD, mSATA SSD, and DDR memory products; supports English, Arabic, French, Spanish, Portuguese, Russian, and Simplified Chinese; stores an inquiry cart in `localStorage`; and submits an encoded inquiry message to WhatsApp `+86 19064025220`.
 
 ## Live Deployment
 
@@ -64,7 +64,7 @@ Arabic uses `dir="rtl"`. Technical terms such as PCIe, NVMe, SATA, NGFF, mSATA, 
 2. Cart persists in `localStorage`.
 3. Buyer fills name, country, WhatsApp, and remark.
 4. Submit generates the order text, calls `navigator.clipboard.writeText(orderText)` inside the click/submit flow, and opens:
-   `https://wa.me/8613602489689?text=<URL_ENCODED_ORDER_TEXT>`
+   `https://wa.me/8619064025220?text=<URL_ENCODED_ORDER_TEXT>`
 5. If clipboard access is blocked, a fallback textarea displays the full order text.
 
 ## Assets and Sources

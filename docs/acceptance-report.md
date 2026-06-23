@@ -32,7 +32,7 @@ Automated Chrome/Playwright checks were run against `http://localhost:4173/`.
 | Modify quantity in cart | Pass |
 | Refresh page and keep cart | Pass |
 | Generate WhatsApp URL | Pass |
-| WhatsApp phone is `8613602489689` | Pass |
+| WhatsApp phone is `8619064025220` | Pass |
 | Order text uses `encodeURIComponent(orderText)` | Pass |
 | Clipboard call uses `navigator.clipboard.writeText(orderText)` inside submit flow | Pass |
 | Clipboard blocked fallback textarea | Pass |

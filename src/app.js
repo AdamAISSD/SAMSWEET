@@ -1,7 +1,7 @@
 import { capacities, categories, products } from "./data/products.js";
 import { defaultLocale, localeMeta, localeOrder, translations } from "./i18n/translations.js";
 
-const WHATSAPP_PHONE = "8613602489689";
+const WHATSAPP_PHONE = "8619064025220";
 const CART_KEY = "samsweet-inquiry-cart-v1";
 const LOCALE_KEY = "samsweet-locale";
 

@@ -149,7 +149,7 @@ export const translations = {
     footer: {
       summary: "SAMSWEET SSD and memory products for wholesale buyers, repair channels and global distributors.",
       disclaimer: "Product specifications and prices may change. Final details are confirmed by quotation.",
-      whatsapp: "WhatsApp: +86 13602489689"
+      whatsapp: "WhatsApp: +86 19064025220"
     }
   },
   ar: {
@@ -255,7 +255,7 @@ export const translations = {
       ]
     },
     finalCta: { title: "هل أنت جاهز لبناء استفسار SAMSWEET SSD؟", body: "اختر المنتجات والكميات وأرسل رسالة WhatsApp واضحة بمتطلبات التوريد.", button: "ابدأ الاستفسار" },
-    footer: { summary: "منتجات SAMSWEET SSD والذاكرة لمشتري الجملة وقنوات الصيانة والموزعين العالميين.", disclaimer: "قد تتغير مواصفات المنتجات والأسعار. تؤكد التفاصيل النهائية بعرض السعر.", whatsapp: "WhatsApp: +86 13602489689" }
+    footer: { summary: "منتجات SAMSWEET SSD والذاكرة لمشتري الجملة وقنوات الصيانة والموزعين العالميين.", disclaimer: "قد تتغير مواصفات المنتجات والأسعار. تؤكد التفاصيل النهائية بعرض السعر.", whatsapp: "WhatsApp: +86 19064025220" }
   },
   fr: {
     ...shared,
@@ -271,7 +271,7 @@ export const translations = {
     cart: { title: "Panier d'inquiry", empty: "Votre panier est vide.", subtotalNote: "Les prix de référence sont indicatifs. Le devis final est confirmé par SAMSWEET.", open: "Ouvrir le panier", close: "Fermer", remove: "Retirer", clear: "Vider", formTitle: "Infos client", name: "Nom", country: "Pays", whatsapp: "Votre WhatsApp", remark: "Remarque", submit: "Copier et ouvrir WhatsApp", copied: "Commande copiée. WhatsApp va s'ouvrir avec votre message.", fallbackTitle: "Copiez votre inquiry", fallbackBody: "L'accès au presse-papiers a été bloqué. Votre demande est ici; copiez-la puis envoyez-la sur WhatsApp.", fallbackButton: "Ouvrir WhatsApp", required: "Ajoutez au moins un produit avant l'envoi." },
     faq: { eyebrow: "FAQ", title: "Questions wholesale fréquentes.", items: [["Comment obtenir le dernier devis ?", "Ajoutez les produits au panier et envoyez le message WhatsApp. SAMSWEET confirmera prix, stock et expédition."], ["Acceptez-vous les commandes wholesale ?", "Oui, pour assembleurs PC, réparateurs, distributeurs et acheteurs internationaux."], ["Puis-je mélanger les capacités ?", "Oui. Ajoutez chaque capacité et quantité au panier pour un devis clair."], ["Comment confirmer la compatibilité ?", "Partagez modèle appareil, interface et usage cible. La compatibilité finale se confirme par spécification ou échantillon."], ["Comment passer commande ?", "Envoyez l'inquiry, confirmez devis et stock, puis organisez paiement et expédition."], ["Et si WhatsApp ne s'ouvre pas ?", "Le texte est aussi copié. Utilisez la zone de secours pour envoyer manuellement."]] },
     finalCta: { title: "Prêt à préparer votre inquiry SAMSWEET SSD ?", body: "Sélectionnez produits et quantités, puis envoyez un message WhatsApp clair.", button: "Démarrer l'inquiry" },
-    footer: { summary: "SSD et mémoire SAMSWEET pour buyers wholesale, réparation et distribution internationale.", disclaimer: "Les spécifications et prix peuvent changer. Les détails finaux sont confirmés par devis.", whatsapp: "WhatsApp : +86 13602489689" }
+    footer: { summary: "SSD et mémoire SAMSWEET pour buyers wholesale, réparation et distribution internationale.", disclaimer: "Les spécifications et prix peuvent changer. Les détails finaux sont confirmés par devis.", whatsapp: "WhatsApp : +86 19064025220" }
   },
   es: {
     ...shared,
@@ -287,7 +287,7 @@ export const translations = {
     cart: { title: "Carrito de consulta", empty: "Tu carrito está vacío.", subtotalNote: "Los precios de referencia son orientativos. SAMSWEET confirma la cotización final.", open: "Abrir carrito", close: "Cerrar", remove: "Quitar", clear: "Vaciar", formTitle: "Datos del cliente", name: "Nombre", country: "País", whatsapp: "Tu WhatsApp", remark: "Nota", submit: "Copiar y abrir WhatsApp", copied: "Pedido copiado. WhatsApp se abrirá con tu mensaje.", fallbackTitle: "Copia tu consulta", fallbackBody: "El navegador bloqueó el portapapeles. Tu consulta está aquí; cópiala y envíala por WhatsApp.", fallbackButton: "Abrir WhatsApp", required: "Añade al menos un producto antes de enviar." },
     faq: { eyebrow: "FAQ", title: "Preguntas mayoristas comunes.", items: [["¿Cómo obtengo la cotización más reciente?", "Añade productos al carrito y envía el WhatsApp. SAMSWEET confirmará precio, stock y envío."], ["¿Aceptan pedidos al por mayor?", "Sí, para integradores PC, reparación, distribuidores y compradores globales."], ["¿Puedo mezclar capacidades?", "Sí. Añade cada capacidad y cantidad para una cotización clara."], ["¿Cómo confirmo compatibilidad?", "Comparte modelo, interfaz y uso. La compatibilidad final se confirma por especificación o muestra."], ["¿Cómo hago un pedido?", "Envía la consulta, confirma cotización y stock, y luego organiza pago y envío."], ["¿Qué pasa si WhatsApp no abre?", "El texto también se copia. Usa el cuadro de respaldo y envíalo manualmente."]] },
     finalCta: { title: "¿Listo para crear tu consulta SAMSWEET SSD?", body: "Selecciona productos, agrega cantidades y envía un mensaje claro por WhatsApp.", button: "Iniciar consulta" },
-    footer: { summary: "SSD y memorias SAMSWEET para compradores mayoristas, reparación y distribuidores globales.", disclaimer: "Las especificaciones y precios pueden cambiar. Los detalles finales se confirman por cotización.", whatsapp: "WhatsApp: +86 13602489689" }
+    footer: { summary: "SSD y memorias SAMSWEET para compradores mayoristas, reparación y distribuidores globales.", disclaimer: "Las especificaciones y precios pueden cambiar. Los detalles finales se confirman por cotización.", whatsapp: "WhatsApp: +86 19064025220" }
   },
   pt: {
     ...shared,
@@ -303,7 +303,7 @@ export const translations = {
     cart: { title: "Carrinho de cotação", empty: "Seu carrinho está vazio.", subtotalNote: "Preços de referência são apenas orientação. A cotação final é confirmada pela SAMSWEET.", open: "Abrir carrinho", close: "Fechar", remove: "Remover", clear: "Limpar", formTitle: "Dados do cliente", name: "Nome", country: "País", whatsapp: "Seu WhatsApp", remark: "Observação", submit: "Copiar e abrir WhatsApp", copied: "Pedido copiado. O WhatsApp abrirá com sua mensagem.", fallbackTitle: "Copie sua consulta", fallbackBody: "O acesso à área de transferência foi bloqueado. Sua consulta está aqui; copie e envie pelo WhatsApp.", fallbackButton: "Abrir WhatsApp", required: "Adicione pelo menos um produto antes de enviar." },
     faq: { eyebrow: "FAQ", title: "Perguntas comuns de atacado.", items: [["Como recebo a cotação mais recente?", "Adicione produtos ao carrinho e envie pelo WhatsApp. A SAMSWEET confirmará preço, estoque e envio."], ["Vocês atendem atacado?", "Sim, para integradores PC, assistência técnica, distribuidores e compradores globais."], ["Posso misturar capacidades?", "Sim. Adicione cada capacidade e quantidade para uma cotação clara."], ["Como confirmo compatibilidade?", "Informe modelo, interface e uso. A compatibilidade final é confirmada por especificação ou amostra."], ["Como faço um pedido?", "Envie a consulta, confirme cotação e estoque, depois organize pagamento e envio."], ["E se o WhatsApp não abrir?", "O texto também é copiado. Use a caixa de backup e envie manualmente."]] },
     finalCta: { title: "Pronto para montar sua consulta SAMSWEET SSD?", body: "Selecione produtos, adicione quantidades e envie uma mensagem clara pelo WhatsApp.", button: "Iniciar consulta" },
-    footer: { summary: "SSDs e memórias SAMSWEET para compradores de atacado, reparo e distribuidores globais.", disclaimer: "Especificações e preços podem mudar. Detalhes finais são confirmados por cotação.", whatsapp: "WhatsApp: +86 13602489689" }
+    footer: { summary: "SSDs e memórias SAMSWEET para compradores de atacado, reparo e distribuidores globais.", disclaimer: "Especificações e preços podem mudar. Detalhes finais são confirmados por cotação.", whatsapp: "WhatsApp: +86 19064025220" }
   },
   ru: {
     ...shared,
@@ -319,7 +319,7 @@ export const translations = {
     cart: { title: "Корзина запроса", empty: "Корзина запроса пуста.", subtotalNote: "Справочные цены только для ориентира. Финальную котировку подтверждает SAMSWEET.", open: "Открыть корзину", close: "Закрыть", remove: "Удалить", clear: "Очистить", formTitle: "Данные клиента", name: "Имя", country: "Страна", whatsapp: "Ваш WhatsApp", remark: "Комментарий", submit: "Скопировать и открыть WhatsApp", copied: "Заказ скопирован. WhatsApp откроется с вашим сообщением.", fallbackTitle: "Скопируйте запрос", fallbackBody: "Доступ к буферу обмена заблокирован. Ваш запрос сохранен здесь; скопируйте и отправьте в WhatsApp.", fallbackButton: "Открыть WhatsApp", required: "Добавьте хотя бы один продукт перед отправкой." },
     faq: { eyebrow: "FAQ", title: "Частые вопросы по опту.", items: [["Как получить актуальную котировку?", "Добавьте продукты в корзину и отправьте WhatsApp. SAMSWEET подтвердит цену, наличие и доставку."], ["Вы поддерживаете оптовые заказы?", "Да, для сборщиков ПК, сервисов, дистрибьюторов и международных покупателей."], ["Можно смешивать разные емкости?", "Да. Добавьте каждую емкость и количество для понятной котировки."], ["Как подтвердить совместимость?", "Сообщите модель устройства, интерфейс и сценарий. Финальная совместимость подтверждается спецификацией или образцом."], ["Как разместить заказ?", "Отправьте запрос, подтвердите цену и наличие, затем согласуйте оплату и доставку."], ["Что если WhatsApp не открылся?", "Текст также копируется. Используйте резервное поле и отправьте вручную."]] },
     finalCta: { title: "Готовы собрать запрос SAMSWEET SSD?", body: "Выберите продукты, добавьте количества и отправьте четкое сообщение в WhatsApp.", button: "Начать запрос" },
-    footer: { summary: "SSD и память SAMSWEET для оптовых покупателей, ремонта и международных дистрибьюторов.", disclaimer: "Спецификации и цены могут изменяться. Финальные детали подтверждаются котировкой.", whatsapp: "WhatsApp: +86 13602489689" }
+    footer: { summary: "SSD и память SAMSWEET для оптовых покупателей, ремонта и международных дистрибьюторов.", disclaimer: "Спецификации и цены могут изменяться. Финальные детали подтверждаются котировкой.", whatsapp: "WhatsApp: +86 19064025220" }
   },
   "zh-CN": {
     ...shared,
@@ -335,6 +335,6 @@ export const translations = {
     cart: { title: "询价车", empty: "询价车为空。", subtotalNote: "参考价仅供沟通，最终报价由 SAMSWEET 确认。", open: "打开询价车", close: "关闭", remove: "移除", clear: "清空", formTitle: "客户信息", name: "姓名", country: "国家", whatsapp: "您的 WhatsApp", remark: "备注", submit: "复制订单并打开 WhatsApp", copied: "订单已复制。WhatsApp 将打开并带上您的询价消息。", fallbackTitle: "复制您的询价", fallbackBody: "浏览器阻止了剪贴板访问。订单内容已保留在这里，请手动复制后发送到 WhatsApp。", fallbackButton: "打开 WhatsApp", required: "请至少添加一个产品后再提交。" },
     faq: { eyebrow: "FAQ", title: "常见批发问题。", items: [["如何获得最新报价？", "将产品加入询价车并发送 WhatsApp，SAMSWEET 会确认当前价格、库存和发货细节。"], ["支持批发订单吗？", "支持。网站面向装机商、维修店、分销商和海外买家的批量询价。"], ["可以混合不同容量吗？", "可以。请把每个容量和数量加入询价车，方便准确报价。"], ["如何确认兼容性？", "请提供设备型号、接口需求和使用场景，最终兼容性以规格或样品测试确认为准。"], ["如何下单？", "通过 WhatsApp 发送询价，确认报价和库存后，再安排付款和发货。"], ["如果 WhatsApp 没有打开怎么办？", "网站也会复制订单文本。可使用兜底文本框手动复制并发送。"]] },
     finalCta: { title: "准备好创建 SAMSWEET SSD 询价了吗？", body: "选择产品、填写数量，并通过 WhatsApp 发送清晰的采购需求。", button: "开始询价" },
-    footer: { summary: "SAMSWEET SSD 与内存产品，服务批发买家、维修渠道和全球分销商。", disclaimer: "产品规格和价格可能变化，最终细节以报价确认为准。", whatsapp: "WhatsApp: +86 13602489689" }
+    footer: { summary: "SAMSWEET SSD 与内存产品，服务批发买家、维修渠道和全球分销商。", disclaimer: "产品规格和价格可能变化，最终细节以报价确认为准。", whatsapp: "WhatsApp: +86 19064025220" }
   }
 };
