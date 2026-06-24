@@ -24,6 +24,7 @@ const required = [
   ".github/workflows/deploy.yml",
   ".github/workflows/android-build.yml",
   "android/SamsweetPriceAdmin/settings.gradle.kts",
+  "android/SamsweetPriceAdmin/gradle.properties",
   "android/SamsweetPriceAdmin/app/src/main/java/com/samsweet/priceadmin/MainActivity.kt",
   "android/SamsweetPriceAdmin/app/src/main/java/com/samsweet/priceadmin/PriceAdminViewModel.kt",
   "public/.nojekyll"

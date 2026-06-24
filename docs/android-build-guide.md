@@ -32,6 +32,7 @@ Requirements:
 - JDK 17+
 - Gradle 8.10.x or compatible
 - Android platform 35
+- AndroidX enabled through `android/SamsweetPriceAdmin/gradle.properties`
 
 Command:
 

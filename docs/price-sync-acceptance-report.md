@@ -67,6 +67,7 @@ Observed local results:
 - `node scripts/lint.mjs`: Pass.
 - `npm ci`: Not available locally because `npm` is not on PATH.
 - `gradle :app:assembleDebug`: Not available locally because `gradle` is not on PATH.
+- GitHub Actions Android build: configured with AndroidX enabled in `android/SamsweetPriceAdmin/gradle.properties`.
 
 ## Browser Smoke Test
 
