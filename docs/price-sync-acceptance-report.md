@@ -42,7 +42,7 @@ This report covers the Android Price Admin source, shared public price JSON, sto
 | Check | Result | Notes |
 | --- | --- | --- |
 | Pages workflow | Pass | Existing deploy workflow builds `dist/`; `public/data/*` is copied into output. |
-| Android workflow | Pass | `.github/workflows/android-build.yml` builds debug APK artifact. |
+| Android workflow | Pass | `.github/workflows/android-build.yml` builds and uploads a debug APK artifact in GitHub Actions. |
 | No deployment secret required | Pass | Pages deploy uses standard GitHub Pages OIDC permissions only. |
 | No Android token in CI | Pass | Android app token is user-entered on device only. |
 
@@ -67,7 +67,7 @@ Observed local results:
 - `node scripts/lint.mjs`: Pass.
 - `npm ci`: Not available locally because `npm` is not on PATH.
 - `gradle :app:assembleDebug`: Not available locally because `gradle` is not on PATH.
-- GitHub Actions Android build: configured with AndroidX enabled in `android/SamsweetPriceAdmin/gradle.properties`.
+- GitHub Actions Android build: Pass after enabling AndroidX in `android/SamsweetPriceAdmin/gradle.properties`; debug APK artifact uploaded.
 
 ## Browser Smoke Test
 
@@ -96,3 +96,11 @@ No real GitHub personal access token was added. The only `Authorization` usage i
 ## Pages Update
 
 After the Android app uploads `public/data/latest-prices.json`, GitHub Pages deployment may take a few minutes. The storefront reduces cache risk with a timestamp query parameter when loading the price file.
+
+Live Pages verification passed for:
+
+- `https://adamaissd.github.io/SAMSWEET/data/latest-prices.json`
+- `https://adamaissd.github.io/SAMSWEET/data/products.json`
+- `https://adamaissd.github.io/SAMSWEET/`
+
+Observed live storefront result: 27 products, 27 latest price panels, `RMB 128` on the first PCIe 128GB product, WhatsApp URL starts with `https://wa.me/8613602489689?text=`, and copied order text contains latest price data.

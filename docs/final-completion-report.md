@@ -28,6 +28,9 @@ Date: 2026-06-24 Asia/Taipei
 - `npm run build` equivalent: pass via `node scripts/build.mjs`.
 - `npm run lint` equivalent: pass via `node scripts/lint.mjs`.
 - Browser smoke test with local Chrome: pass for 390, 768, 1440, and 1920 widths.
+- GitHub Pages workflow: pass.
+- Android debug APK workflow: pass, artifact uploaded by GitHub Actions.
+- Live GitHub Pages smoke test: pass.
 - Latest price load: pass.
 - Arabic RTL: pass.
 - Cart persistence by reload: pass.
