@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-24T00:00:00.000Z",
+  "updatedBy": "SAMSWEET Price Admin",
+  "currency": "RMB",
+  "displayCurrency": "RMB",
+  "source": "android-price-admin",
+  "items": {
+    "pcie-128-brand-new": {
+      "price": 128,
+      "priceText": "RMB 128",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "pcie-256-brand-new": {
+      "price": 215,
+      "priceText": "RMB 215",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "pcie-512-brand-new": {
+      "price": 375,
+      "priceText": "RMB 375",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "pcie-1tb-brand-new": {
+      "price": 600,
+      "priceText": "RMB 600",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "sata-128-brand-new": {
+      "price": 85,
+      "priceText": "RMB 85",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "sata-256-brand-new": {
+      "price": 141,
+      "priceText": "RMB 141",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "sata-512-brand-new": {
+      "price": 272,
+      "priceText": "RMB 272",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "sata-1tb-brand-new": {
+      "price": 520,
+      "priceText": "RMB 520",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ngff-128-brand-new": {
+      "price": 85,
+      "priceText": "RMB 85",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ngff-256-brand-new": {
+      "price": 141,
+      "priceText": "RMB 141",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ngff-512-brand-new": {
+      "price": 272,
+      "priceText": "RMB 272",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ngff-1tb-brand-new": {
+      "price": 520,
+      "priceText": "RMB 520",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "msata-128-brand-new": {
+      "price": 85,
+      "priceText": "RMB 85",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "msata-256-brand-new": {
+      "price": 145,
+      "priceText": "RMB 145",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "msata-512-brand-new": {
+      "price": 278,
+      "priceText": "RMB 278",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ram-ddr4-8gb-2400": {
+      "price": 124,
+      "priceText": "RMB 124",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ram-ddr4-16gb-2666": {
+      "price": 330,
+      "priceText": "RMB 330",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ram-ddr3-8gb-1600": {
+      "price": 61,
+      "priceText": "RMB 61",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "sata-128-b-quality": {
+      "price": 80,
+      "priceText": "RMB 80",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "sata-256-b-quality": {
+      "price": 125,
+      "priceText": "RMB 125",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "sata-512-b-quality": {
+      "price": 230,
+      "priceText": "RMB 230",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ngff-128-b-quality": {
+      "price": 81,
+      "priceText": "RMB 81",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ngff-256-b-quality": {
+      "price": 127,
+      "priceText": "RMB 127",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "ngff-512-b-quality": {
+      "price": 235,
+      "priceText": "RMB 235",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "msata-128-b-quality": {
+      "price": 81,
+      "priceText": "RMB 81",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "msata-256-b-quality": {
+      "price": 127,
+      "priceText": "RMB 127",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    },
+    "msata-512-b-quality": {
+      "price": 235,
+      "priceText": "RMB 235",
+      "available": true,
+      "note": "Final price confirmed by quotation"
+    }
+  }
+}

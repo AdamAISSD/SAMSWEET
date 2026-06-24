@@ -2,10 +2,18 @@ import { capacities, categories, products } from "./data/products.js";
 import { defaultLocale, localeMeta, localeOrder, translations } from "./i18n/translations.js";
 
 const WHATSAPP_PHONE = "8613602489689";
+const PRICE_DATA_URL = "./data/latest-prices.json";
 const CART_KEY = "samsweet-inquiry-cart-v1";
 const LOCALE_KEY = "samsweet-locale";
 
 const productById = new Map(products.map((product) => [product.id, product]));
+products.forEach((product) => {
+  product.available = product.available ?? true;
+  product.priceLive = false;
+  product.priceUpdatedAt = null;
+  product.priceNote = "Final price confirmed by quotation";
+});
+
 const app = document.querySelector("#app");
 
 const state = {
@@ -21,6 +29,12 @@ const state = {
     country: "",
     whatsapp: "",
     remark: ""
+  },
+  priceStatus: {
+    status: "loading",
+    updatedAt: null,
+    message: "Checking latest price file",
+    source: "fallback"
   }
 };
 
@@ -121,6 +135,10 @@ function text() {
   return translations[state.locale] || translations[defaultLocale];
 }
 
+function productText(key, fallback) {
+  return text().products?.[key] || translations.en.products[key] || fallback;
+}
+
 function meta() {
   return localeMeta[state.locale] || localeMeta[defaultLocale];
 }
@@ -149,6 +167,97 @@ function cartItems() {
   return Object.entries(state.cart)
     .map(([id, qty]) => ({ product: productById.get(id), qty }))
     .filter((item) => item.product && item.qty > 0);
+}
+
+function formatPriceDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  try {
+    return new Intl.DateTimeFormat(meta().lang || "en", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit"
+    }).format(date);
+  } catch {
+    return date.toISOString();
+  }
+}
+
+function currentPriceText(product) {
+  if (product.available === false) return productText("contactForQuote", "Contact for current quote");
+  return product.priceText || productText("contactForQuote", "Contact for current quote");
+}
+
+function priceSourceText(product) {
+  if (product.priceLive) return productText("livePriceLoaded", "Live price loaded");
+  if (state.priceStatus.status === "loading") return productText("checkingLivePrice", "Checking latest price file");
+  return productText("fallbackReferencePrice", "Using fallback reference price");
+}
+
+function priceUpdatedText(product) {
+  const updatedAt = product.priceUpdatedAt || state.priceStatus.updatedAt;
+  const formatted = formatPriceDate(updatedAt);
+  return formatted ? `${productText("priceUpdated", "Price updated")}: ${formatted}` : productText("fallbackReferencePrice", "Using fallback reference price");
+}
+
+function validatePriceItem(item) {
+  const priceTypeOk = typeof item.price === "number" || item.price === null;
+  return item && priceTypeOk && typeof item.priceText === "string" && typeof item.available === "boolean" && typeof item.note === "string";
+}
+
+function mergeLatestPrices(priceDocument) {
+  if (!priceDocument || typeof priceDocument !== "object" || !priceDocument.items || typeof priceDocument.items !== "object") {
+    throw new Error("Invalid latest-prices.json document");
+  }
+
+  Object.entries(priceDocument.items).forEach(([id, item]) => {
+    const product = productById.get(id);
+    if (!product) {
+      console.warn(`Ignoring latest price for unknown product id: ${id}`);
+      return;
+    }
+
+    if (!validatePriceItem(item)) {
+      console.warn(`Ignoring invalid latest price item for product id: ${id}`);
+      return;
+    }
+
+    product.price = item.price;
+    product.priceText = item.priceText || productText("contactForQuote", "Contact for current quote");
+    product.available = item.available;
+    product.priceNote = item.note;
+    product.priceUpdatedAt = priceDocument.updatedAt;
+    product.priceCurrency = priceDocument.currency || "RMB";
+    product.priceSource = priceDocument.source || "android-price-admin";
+    product.priceLive = true;
+  });
+}
+
+async function loadLatestPrices() {
+  try {
+    const response = await fetch(`${PRICE_DATA_URL}?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Latest price request failed: ${response.status}`);
+    const priceDocument = await response.json();
+    mergeLatestPrices(priceDocument);
+    state.priceStatus = {
+      status: "live",
+      updatedAt: priceDocument.updatedAt || null,
+      message: productText("livePriceLoaded", "Live price loaded"),
+      source: priceDocument.source || "android-price-admin"
+    };
+  } catch (error) {
+    console.warn("Using fallback reference prices.", error);
+    state.priceStatus = {
+      status: "fallback",
+      updatedAt: null,
+      message: productText("fallbackReferencePrice", "Using fallback reference price"),
+      source: "src/data/products.js"
+    };
+  }
+  renderApp();
 }
 
 function renderApp() {
@@ -250,6 +359,7 @@ function renderApp() {
             </select>
           </label>
         </div>
+        ${renderPriceSyncStatus()}
         <div class="filter-status" aria-live="polite">
           <p id="result-count"></p>
           <div class="filter-chips" id="filter-chips"></div>
@@ -387,6 +497,24 @@ function renderApp() {
   renderCart();
 }
 
+function renderPriceSyncStatus() {
+  const statusClass = state.priceStatus.status === "live" ? "is-live" : state.priceStatus.status === "loading" ? "is-loading" : "is-fallback";
+  const statusLabel =
+    state.priceStatus.status === "live"
+      ? productText("livePriceLoaded", "Live price loaded")
+      : state.priceStatus.status === "loading"
+        ? productText("checkingLivePrice", "Checking latest price file")
+        : productText("fallbackReferencePrice", "Using fallback reference price");
+  const updated = state.priceStatus.updatedAt ? `${productText("priceUpdated", "Price updated")}: ${formatPriceDate(state.priceStatus.updatedAt)}` : productText("finalQuoteDisclaimer", "Final price, stock, warranty, and shipment details are confirmed by quotation.");
+  return `
+    <div class="price-sync-strip ${statusClass}" aria-live="polite">
+      <span class="status-dot" aria-hidden="true"></span>
+      <strong>${escapeHtml(statusLabel)}</strong>
+      <span>${escapeHtml(updated)}</span>
+    </div>
+  `;
+}
+
 function sectionHeader(eyebrow, title, body) {
   return `
     <div class="section-header">
@@ -433,7 +561,8 @@ function productMatches(product) {
     product.interface,
     product.protocol,
     product.formFactor,
-    product.qualityGrade
+    product.qualityGrade,
+    product.priceText
   ]
     .filter(Boolean)
     .join(" ")
@@ -521,7 +650,15 @@ function productCard(product) {
           <div><dt>Speed</dt><dd>${escapeHtml(product.speedRead || "Confirm")}</dd></div>
           <div><dt>Grade</dt><dd>${escapeHtml(product.qualityGrade || "-")}</dd></div>
         </dl>
-        <p class="price-text">${escapeHtml(product.priceText || "Contact for quote")}</p>
+        <div class="price-panel ${product.priceLive ? "is-live" : "is-fallback"}">
+          <div class="price-panel-head">
+            <span class="price-label">${escapeHtml(productText("latestPrice", "Latest Price"))}</span>
+            <span class="availability-chip ${product.available === false ? "is-muted" : ""}">${escapeHtml(product.available === false ? productText("unavailable", "Confirm stock") : productText("available", "Available"))}</span>
+          </div>
+          <strong class="price-text">${escapeHtml(currentPriceText(product))}</strong>
+          <span class="price-updated">${escapeHtml(priceUpdatedText(product))}</span>
+          <span class="price-source">${escapeHtml(priceSourceText(product))}</span>
+        </div>
         <ul class="mini-list">
           ${product.highlights.slice(0, 3).map((highlight) => `<li>${escapeHtml(highlight)}</li>`).join("")}
         </ul>
@@ -603,6 +740,7 @@ function renderCart() {
               <strong>${escapeHtml(product.name)}</strong>
               <p>${escapeHtml([product.capacity, product.interface, product.protocol].filter(Boolean).join(" / "))}</p>
               <p>${escapeHtml(product.sourcePlatform)} / ${escapeHtml(product.qualityGrade)}</p>
+              <p class="cart-price">${escapeHtml(currentPriceText(product))}</p>
             </div>
             <div class="cart-row-actions">
               <div class="quantity-control compact">
@@ -716,7 +854,9 @@ function buildOrderText() {
     lines.push(`   Quantity: ${qty}`);
     lines.push(`   Source: ${product.sourcePlatform || ""}`);
     lines.push(`   Source page: ${product.sourceUrl || window.location.href}`);
-    lines.push(`   Reference price: ${product.priceText || "Contact for quote"}`);
+    lines.push(`   Latest price: ${currentPriceText(product)}`);
+    lines.push(`   Price updated: ${formatPriceDate(product.priceUpdatedAt) || "Using fallback reference price"}`);
+    lines.push(`   Availability: ${product.available === false ? "Confirm stock by quotation" : "Available - final stock confirmed by quotation"}`);
     lines.push("");
   });
 
@@ -727,6 +867,7 @@ function buildOrderText() {
   lines.push(`Remark: ${state.customer.remark}`);
   lines.push("");
   lines.push(`Page: ${window.location.href}`);
+  lines.push("Final price, stock, warranty, and shipment details are confirmed by quotation.");
 
   return lines.join("\n");
 }
@@ -911,3 +1052,4 @@ function bindGlobalEvents() {
 
 bindGlobalEvents();
 renderApp();
+loadLatestPrices();

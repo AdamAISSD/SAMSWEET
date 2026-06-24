@@ -6,6 +6,8 @@ Date: 2026-06-24 Asia/Taipei
 
 This report covers the conversion-focused UI refinement of the existing SAMSWEET static storefront. The work keeps the vanilla JavaScript architecture, product filters, multilingual support, Arabic RTL, inquiry cart, `localStorage`, clipboard copy, WhatsApp redirect, SEO files, and GitHub Pages deployment flow.
 
+The follow-up price-sync iteration is covered in `docs/price-sync-acceptance-report.md`.
+
 ## WhatsApp Number Consistency
 
 Status: Pass.
@@ -93,6 +95,18 @@ Automated Chrome/Playwright checks were run against local preview.
 | SEO files | Pass | Title, description, canonical, Open Graph, Twitter card, robots.txt and sitemap generation retained. |
 | Product JSON-LD | Pass | No fake offer prices added. |
 | Lighthouse | Not run locally | Lighthouse CLI is not installed in this runtime; equivalent automated checks covered layout, images, console, SEO markers, and functional flows. |
+
+## Latest Price Sync Acceptance
+
+| Check | Result | Notes |
+| --- | --- | --- |
+| Public product catalog | Pass | `public/data/products.json` generated from `src/data/products.js`. |
+| Latest price JSON | Pass | `public/data/latest-prices.json` seeded with 27 matching product IDs. |
+| Latest price schema | Pass | `public/data/latest-prices.schema.json` added. |
+| Storefront async price fetch | Pass | Uses `./data/latest-prices.json?ts=<timestamp>`. |
+| Product card latest price UI | Pass | Latest Price, updated status, live/fallback state, and availability added. |
+| Cart and WhatsApp latest price | Pass | Cart rows and order text use merged latest price data. |
+| Android app source | Pass | Added at `android/SamsweetPriceAdmin/`. See `docs/price-sync-acceptance-report.md`. |
 
 ## Source and Asset Status
 

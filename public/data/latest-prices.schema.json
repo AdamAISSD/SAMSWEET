@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adamaissd.github.io/SAMSWEET/data/latest-prices.schema.json",
+  "title": "SAMSWEET Latest Prices",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "currency",
+    "items"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedBy": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayCurrency": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "items": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "price",
+          "priceText",
+          "available",
+          "note"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "price": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "priceText": {
+            "type": "string"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

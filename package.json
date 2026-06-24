@@ -5,6 +5,8 @@
   "type": "module",
   "description": "SAMSWEET responsive multilingual SSD and memory inquiry site for overseas B2B buyers.",
   "scripts": {
+    "export:data": "node scripts/export-data.mjs",
+    "seed:prices": "node scripts/export-data.mjs --seed-prices",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/preview.mjs",
     "lint": "node scripts/lint.mjs"

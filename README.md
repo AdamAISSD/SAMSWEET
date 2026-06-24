@@ -25,12 +25,15 @@ The current interface has been refined as a conversion-focused premium B2B techn
 
 ```bash
 npm ci
+npm run export:data
 npm run build
 npm run preview
 npm run lint
 ```
 
-This project has no runtime npm dependencies. The build script copies `index.html`, `src/`, and `public/` into `dist/`, then generates `robots.txt` and `sitemap.xml`.
+This project has no runtime npm dependencies. The build script exports `public/data/products.json`, copies `index.html`, `src/`, and `public/` into `dist/`, then generates `robots.txt` and `sitemap.xml`.
+
+If the local machine does not expose global Node/npm, use GitHub Actions or a local Node.js installation. The Codex desktop runtime may provide a bundled `node.exe` for static checks.
 
 ## Project Structure
 
@@ -45,15 +48,25 @@ src/
 public/
   .nojekyll
   assets/products/
+  data/products.json
+  data/latest-prices.json
+  data/latest-prices.schema.json
+android/
+  SamsweetPriceAdmin/
 docs/
   implementation-plan.md
   design-standard.md
   ui-redesign-reference.xml
+  price-admin-architecture.md
+  android-app-design-standard.md
   source-harvest-report.md
   acceptance-report.md
+  price-sync-acceptance-report.md
 .github/workflows/deploy.yml
+.github/workflows/android-build.yml
 scripts/
   build.mjs
+  export-data.mjs
   preview.mjs
   lint.mjs
 ```
@@ -63,6 +76,79 @@ scripts/
 Edit products in `src/data/products.js`.
 
 Each product includes category, capacity, interface, protocol, quality grade, reference price text, local image path, source platform, placeholder status, and highlights. The active reference prices come from the user-supplied SAMSWEET price list dated June 8, 2026. Final price, stock, warranty, and shipment details must be confirmed by quotation.
+
+`public/data/products.json` is exported from `src/data/products.js` so the website and Android app use the same product IDs.
+
+## Latest Price Sync
+
+Current public prices live in:
+
+- `public/data/latest-prices.json`
+- `public/data/latest-prices.schema.json`
+- `public/data/products.json`
+
+The storefront loads `./data/latest-prices.json?ts=<timestamp>` after the base product data. If the request succeeds, product cards, cart rows, and WhatsApp order text use the latest price. If it fails, the site keeps the original reference prices and shows a fallback status.
+
+Price data is public because GitHub Pages is public. Treat prices as reference pricing only:
+
+> Final price, stock, warranty, and shipment details are confirmed by quotation.
+
+## Android Price Admin
+
+Android app source path:
+
+```text
+android/SamsweetPriceAdmin/
+```
+
+App name: `SAMSWEET Price Admin`  
+Package: `com.samsweet.priceadmin`
+
+The app updates prices without a server:
+
+```text
+Android APP
+-> GitHub REST Contents API
+-> public/data/latest-prices.json
+-> GitHub Actions
+-> GitHub Pages
+-> Storefront latest price fetch
+```
+
+Android build command in a machine with JDK 17, Android SDK, and Gradle:
+
+```bash
+cd android/SamsweetPriceAdmin
+gradle :app:assembleDebug
+```
+
+GitHub Actions also builds a debug APK artifact through `.github/workflows/android-build.yml`.
+
+See `docs/android-build-guide.md` for local and CI Android build details. No APK is committed to Git.
+
+## GitHub Token Safety
+
+The Android app never includes a token in source code, README, `BuildConfig`, `strings.xml`, logs, or CI.
+
+Recommended fine-grained personal access token:
+
+- Owner/repository: `AdamAISSD/SAMSWEET` only
+- Contents: read/write
+- Actions: read only if workflow status checks are needed
+- Expiration: set a reasonable expiration date
+
+The app supports session-only token use. If the user chooses to remember it, the token is encrypted with Android Keystore-backed AES/GCM storage. UI previews show only the first four and last four characters.
+
+## Uploading Prices
+
+1. Open `SAMSWEET Price Admin`.
+2. Enter GitHub owner, repo, branch, product path, price path, Pages URL, and token.
+3. Tap `Sync`.
+4. Edit product prices, availability, and notes.
+5. Preview changes.
+6. Tap `Confirm and Upload`.
+7. Wait for GitHub Actions Pages deployment.
+8. Open `https://adamaissd.github.io/SAMSWEET/` and verify latest prices.
 
 ## Languages
 
@@ -103,4 +189,4 @@ JD and Tmall product images are not hotlinked. See `docs/source-harvest-report.m
 
 The workflow installs with `npm ci`, builds with `npm run build`, uploads `dist/`, and deploys through GitHub Pages Actions. `.nojekyll` is included to avoid Jekyll processing static assets.
 
-No backend, database, payment, login, customer-data storage, tokens, cookies, or secrets are included.
+No backend, database, payment, login, customer-data storage, cookies, or secrets are included in the website. Android tokens are entered by the admin at runtime only.

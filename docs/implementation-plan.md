@@ -6,6 +6,8 @@ Date: 2026-06-24
 
 Build and deploy a responsive English-first SAMSWEET SSD and memory independent site for overseas B2B buyers. The site will present SSD and memory product lines, support multilingual browsing, persist an inquiry cart in localStorage, and submit encoded order details to WhatsApp `8613602489689`.
 
+Second iteration objective: add a zero-server Android Price Admin app that updates `public/data/latest-prices.json` through the GitHub REST Contents API, triggering GitHub Actions and GitHub Pages so the storefront displays current public reference prices.
+
 ## Source Strategy
 
 - Use `AdamAISSD/samsweet-ssd-homepage` as a read-only visual and product reference.
@@ -18,6 +20,9 @@ Build and deploy a responsive English-first SAMSWEET SSD and memory independent 
 
 - Build a static, GitHub Pages-friendly storefront with maintainable HTML, CSS, and JavaScript modules.
 - Use `src/data/products.js` for product data and `src/i18n/translations.js` for all language strings.
+- Export `public/data/products.json` from the product module so the Android app and website use aligned product IDs.
+- Store current public prices in `public/data/latest-prices.json` with `public/data/latest-prices.schema.json`.
+- Keep the Android app in `android/SamsweetPriceAdmin/` using Kotlin, Jetpack Compose, Material 3, OkHttp, kotlinx.serialization, and Android Keystore-backed token storage.
 - Keep all order logic client-side. No backend, database, payment, login, or customer data persistence beyond the buyer's local browser cart.
 - Provide `package.json` scripts for GitHub Actions:
   - `npm run build` creates `dist/`.
@@ -44,6 +49,8 @@ Build and deploy a responsive English-first SAMSWEET SSD and memory independent 
 - Fallback textarea modal when clipboard or popup/open behavior is blocked.
 - Language switcher for English, Arabic RTL, French, Spanish, Portuguese, Russian, and Simplified Chinese.
 - SEO meta, Open Graph/Twitter card, robots.txt, sitemap.xml, and Product JSON-LD without fake prices.
+- Latest price loading from `./data/latest-prices.json?ts=<timestamp>` with fallback to original product reference prices.
+- Android dashboard, settings, price editor, diff preview, GitHub Contents API upload, local draft restore, 409 conflict handling, import/export JSON, and safe token handling.
 
 ## Quality Gates
 
@@ -55,12 +62,14 @@ Build and deploy a responsive English-first SAMSWEET SSD and memory independent 
 - No hotlinked JD/Tmall images.
 - No secrets, cookies, tokens, customer data, or private credentials in the repo.
 - `docs/design-standard.md`, `docs/source-harvest-report.md`, `docs/acceptance-report.md`, and `README.md` completed.
+- `docs/price-admin-architecture.md`, `docs/android-app-design-standard.md`, and `docs/price-sync-acceptance-report.md` completed.
 
 ## Deployment Plan
 
 - Create or update GitHub repository `AdamAISSD/SAMSWEET`.
 - Push all project files and assets.
 - Use GitHub Actions to build and deploy `dist/` to GitHub Pages.
+- Use `.github/workflows/android-build.yml` to build a debug APK artifact without Play Store signing or secrets.
 - Confirm final Pages URL and last commit hash.
 
 ## Known Risks

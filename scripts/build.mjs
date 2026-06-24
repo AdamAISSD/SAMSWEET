@@ -8,6 +8,8 @@ const siteUrl = process.env.SITE_URL || "https://adamaissd.github.io/SAMSWEET/";
 await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 
+await import("./export-data.mjs");
+
 await cp(path.join(root, "index.html"), path.join(dist, "index.html"));
 await cp(path.join(root, "src"), path.join(dist, "src"), { recursive: true });
 await cp(path.join(root, "public"), dist, { recursive: true });

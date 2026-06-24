@@ -7,6 +7,26 @@ dist-ssr/
 build/
 _reference/
 
+# Android / Gradle
+android/**/.gradle/
+android/**/build/
+android/**/captures/
+android/**/.cxx/
+android/**/local.properties
+android/**/*.apk
+android/**/*.aab
+android/**/*.ap_
+android/**/*.idsig
+android/**/outputs/
+android/**/generated/
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+signing.properties
+keystore.properties
+
 # Test and coverage output
 coverage/
 .nyc_output/
@@ -15,6 +35,10 @@ coverage/
 .env
 .env.*
 !.env.example
+*.token
+token.txt
+tokens.txt
+access_token*
 
 # Logs
 npm-debug.log*
@@ -22,6 +46,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*.log
 
 # Editor and OS files
 .DS_Store
